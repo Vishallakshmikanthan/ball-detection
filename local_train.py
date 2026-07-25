@@ -41,20 +41,20 @@ def main() -> None:
     if cuda_available:
         print(f"[+] GPU Model: {torch.cuda.get_device_name(0)}")
 
-    # Step 4: Fine-tune YOLOv8n
-    print("[+] Starting YOLOv8n fine-tuning on GPU...")
+    # Step 4: High-Speed Fine-tuning YOLOv8n (320px, batch=32, 15 epochs)
+    print("[+] Starting High-Speed YOLOv8n fine-tuning on RTX 5070 GPU...")
     model = YOLO("yolov8n.pt")
 
     results = model.train(
         data=str(data_yaml),
-        epochs=50,
-        imgsz=640,
-        batch=16,
+        epochs=15,
+        imgsz=320,
+        batch=32,
         optimizer="AdamW",
         lr0=0.01,
         lrf=0.01,
         cos_lr=True,
-        patience=15,
+        patience=10,
         seed=42,
         device=device,
         workers=0
