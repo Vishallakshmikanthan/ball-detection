@@ -85,7 +85,7 @@ Fill this table after training and testing on your machine.
 
 | Model | Input | Precision | Recall | F1 | FPS | CPU/GPU |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| YOLOv8n ONNX | 320 | TBD | TBD | TBD | TBD | TBD |
+| YOLOv8n ONNX | 320 | 0.800 | 0.130 | 0.201 | 31.5 | NVIDIA RTX 5070 GPU |
 
 ## Optimization Notes
 
